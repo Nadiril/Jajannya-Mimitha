@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #fff8f0;
+  --foreground: #3d2b1f;
+  --mimitha-primary: #8b5e3c;
+  --mimitha-secondary: #eed9c4;
+  --mimitha-cream: #fff8f0;
+  --mimitha-card: #fffaf4;
+  --mimitha-accent: #c9824a;
+  --mimitha-leaf: #7a8f5d;
+  --mimitha-muted: #6f5a4a;
+  --mimitha-warm: #f6d7ad;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-mimitha-primary: var(--mimitha-primary);
+  --color-mimitha-secondary: var(--mimitha-secondary);
+  --color-mimitha-cream: var(--mimitha-cream);
+  --color-mimitha-card: var(--mimitha-card);
+  --color-mimitha-accent: var(--mimitha-accent);
+  --color-mimitha-leaf: var(--mimitha-leaf);
+  --color-mimitha-muted: var(--mimitha-muted);
+  --color-mimitha-warm: var(--mimitha-warm);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(139, 94, 60, 0.22);
+}
+
+.mimitha-section {
+  scroll-margin-top: 6rem;
+}
+
+.mimitha-gradient-text {
+  background: linear-gradient(135deg, #8b5e3c 0%, #c9824a 48%, #3d2b1f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pastry-illustration::before {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.85), transparent 22%),
+    linear-gradient(135deg, #ffe0ad 0%, #d99657 52%, #8b5e3c 100%);
+  box-shadow: inset 0 0 0 10px rgba(255, 248, 240, 0.45);
+}
+
+.pastry-illustration::after {
+  content: '';
+  position: absolute;
+  left: 28%;
+  top: 24%;
+  width: 44%;
+  height: 18%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  transform: rotate(-18deg);
+}
+
+.pastry-hero-art::before {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: 20%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.75), transparent 18%),
+    radial-gradient(circle at 72% 70%, rgba(255, 248, 240, 0.65), transparent 20%),
+    linear-gradient(135deg, #ffe0ad 0%, #d99657 48%, #8b5e3c 100%);
+  box-shadow: inset 0 0 0 18px rgba(255, 248, 240, 0.35);
+}
