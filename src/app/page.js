@@ -1,6 +1,7 @@
 import ProductCatalog from '@/components/ProductCatalog';
 import SiteHeader, { whatsappNumber, whatsappUrl } from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import InteractiveMap from '@/components/InteractiveMap';
 
 
 const qualities = [
@@ -400,15 +401,10 @@ export default function Home() {
                       <div>
                         <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">Google Maps</p>
                         <h3 className="mt-3 text-2xl font-black">Peta Lokasi</h3>
-                        <p className="mt-3 leading-7 text-white/70">
-                          Embed peta dapat ditambahkan setelah alamat lengkap usaha tersedia.
-                        </p>
+                        <p className="mt-3 leading-7 text-white/70">Gunakan tombol Google Maps untuk melihat lokasi dan petunjuk arah.</p>
                       </div>
-                      <div className="relative h-48 overflow-hidden rounded-[1.5rem] bg-mimitha-cream">
-                        <span className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mimitha-primary/20" />
-                        <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mimitha-primary" />
-                        <span className="absolute inset-x-8 top-1/2 h-1 bg-mimitha-primary/25" />
-                        <span className="absolute left-1/2 top-8 h-1 w-px bg-mimitha-primary/25" />
+                      <div className="relative h-100 overflow-hidden rounded-[1.5rem] bg-mimitha-cream">
+                        <InteractiveMap />
                       </div>
                     </div>
                   </div>
