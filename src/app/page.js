@@ -123,12 +123,10 @@ export default function Home() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(201,130,74,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-32">
             <div>
-              <p className="mb-5 inline-flex rounded-full border border-mimitha-primary/15 bg-white px-4 py-2 text-sm font-bold text-mimitha-primary shadow-sm">
-                Modern Artisan Bakery Banyuwangi
-              </p>
+
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
                 Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span> untuk momen spesial.
+                <span className="mimitha-gradient-text">Banyak</span>momen spesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
                 Jajanan Mimitha menghadirkan croissant, danish, dan pastry handmade dengan cita rasa hangat,
@@ -380,8 +378,9 @@ export default function Home() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-mimitha-primary transition hover:bg-amber-100"
+                      className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-mimitha-primary"
                     >
+                    
                       Hubungi Kami
                     </a>
                     <a
