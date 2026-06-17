@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: 'Jajanan Mimitha Banyuwangi | Pastry Premium Fresh Daily',
+    default: 'Jajanannya Mimitha Banyuwangi',
     template: '%s | Jajanan Mimitha Banyuwangi',
   },
   description:
