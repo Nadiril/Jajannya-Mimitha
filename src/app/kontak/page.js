@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Kontak Jajanan Mimitha Banyuwangi untuk pemesanan pastry melalui WhatsApp dan informasi lokasi.',
 };
 
-const mapsUrl = 'https://maps.app.goo.gl/CfqPjyF7GfmAU1PL9';
+const mapsUrl = 'https://www.google.com/maps/place/Playwithmii+X+Jajannyamimitha/@-8.2243917,114.3573971,17z/data=!4m15!1m8!3m7!1s0x2dd145000d227e0f:0x43670086506b6d1e!2sPlaywithmii+X+Jajannyamimitha!8m2!3d-8.224397!4d114.3622627!10e1!16s%2Fg%2F11mm6lzmgp!3m5!1s0x2dd145000d227e0f:0x43670086506b6d1e!8m2!3d-8.224397!4d114.3622627!16s%2Fg%2F11mm6lzmgp?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D';
 
 export default function KontakPage() {
   return (

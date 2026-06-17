@@ -26,11 +26,7 @@ export default function SiteHeader() {
           />
           <span>
             <span className='block text-sm font-bold uppercase tracking-[0.22em] text-mimitha-accent'>Jajannya Mimitha</span>
-<<<<<<< HEAD
-            <span className='block text-xs font-semibold text-mimitha-muted'>Home Made Bakery</span>
-=======
             <span className='block text-xs font-semibold text-mimitha-muted'>Banyuwangi Pastry</span>
->>>>>>> a9c451431579338e96d4883c28cb89c633db0dc7
           </span>
         </Link>
         <nav className='hidden items-center gap-1 lg:flex' aria-label='Navigasi utama'>
@@ -51,7 +47,7 @@ export default function SiteHeader() {
             rel='noopener noreferrer'
             className='hidden rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text lg:inline-flex'
           >
-            Pesan Sekarang
+            Tentang Kami
           </a>
           <button
             type='button'

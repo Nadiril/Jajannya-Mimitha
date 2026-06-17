@@ -2,6 +2,7 @@ import ProductCatalog from '@/components/ProductCatalog';
 import SiteHeader, { whatsappNumber, whatsappUrl } from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import InteractiveMap from '@/components/InteractiveMap';
+import Image from 'next/image';
 
 const qualities = [
   {
@@ -119,13 +120,13 @@ export default function Home() {
 
       <main id="main">
         <section id="beranda" className="mimitha-section relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(201,130,74,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255, 255, 255, 0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-5 lg:grid-cols-2 lg:px-5 lg:py-5">
             <div>
 
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
                 Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span> momen spesial.
+                <span className="mimitha-gradient-text">Banyak</span> Momen Mpesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
                 Jajanan Mimitha menghadirkan croissant, andish, dan pastry handmade dengan cita rasa hangat,
@@ -147,21 +148,10 @@ export default function Home() {
                   Lihat Menu
                 </a>
               </div>
+</div>
             </div>
 
-<div className="relative">
-              <div className="absolute -left-8 -top-8 h-32 w-32 rounded-full bg-mimitha-warm/60 blur-2xl" />
-              <div className="absolute -bottom-10 right-6 h-44 w-44 rounded-full bg-mimitha-accent/30 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white p-5 shadow-2xl shadow-mimitha-primary/20">
-                <div className="pastry-hero-art relative h-[34rem] rounded-[2rem]">
-                  <span className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rotate-[-10deg] rounded-[3rem] bg-gradient-to-br from-amber-100 via-amber-300 to-mimitha-primary shadow-2xl shadow-mimitha-primary/30" />
-                  <span className="absolute left-[22%] top-[20%] h-20 w-20 rounded-full bg-white/70" />
-                  <span className="absolute right-[18%] top-[24%] h-28 w-28 rounded-full bg-mimitha-cream/75" />
-                  <span className="absolute bottom-[18%] left-[18%] h-24 w-32 rounded-full bg-mimitha-primary/25" />
-                  <span className="absolute bottom-[20%] right-[16%] h-28 w-28 rounded-full bg-white/60" />
-                </div>
-              </div>
-            </div>
+            <div className="relative">
           </div>
         </section>
 
@@ -213,7 +203,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Best Seller Products</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
-              Pilihan pastry favorit anda.
+              Pilih pastry favorit anda.
             </h2>
             <p className="mt-5 text-lg leading-8 text-mimitha-muted">
               Katalog produk dapat difilter berdasarkan kategori, lalu langsung terhubung ke WhatsApp admin untuk
@@ -342,7 +332,8 @@ export default function Home() {
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">Jam Operasional</p>
-                      <p className="mt-2 font-bold">Hubungi admin untuk info terbaru</p>
+                      <p className="mt-2 font-bold">jam 07:00 - 21:00 WIB</p>
+                      <p className="text-xs text-white/60">Setiap Hari</p>
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">Pemesanan</p>

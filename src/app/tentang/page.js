@@ -15,8 +15,8 @@ const qualities = [
 ];
 
 const stats = [
-  { value: '6+', label: 'Produk unggulan' },
-  { value: '1.000+', label: 'Pelanggan puas' },
+  { value: '5+', label: 'Produk unggulan' },
+  { value: '1.000+', label: 'Pelanggan' },
   { value: 'Banyuwangi', label: 'Brand lokal' },
 ];
 

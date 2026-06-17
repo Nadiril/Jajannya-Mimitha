@@ -38,7 +38,7 @@ export default function SiteFooter() {
               ))}
             </nav>
             <div className='flex flex-wrap gap-3'>
-              {['Instagram', 'TikTok', 'WhatsApp'].map((social) => (
+              {['Instagram', 'WhatsApp'].map((social) => (
                 <a
                   key={social}
                   href='#'
