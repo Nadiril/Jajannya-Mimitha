@@ -30,7 +30,7 @@ export default function TentangPage() {
             <div>
               <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>About Us</p>
               <h1 className='mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl'>
-                Dari dapur lokal untuk pelanggan yang menyukai kualitas.
+                Dari dapur untuk pelanggan yang loyal akan kualitas.
               </h1>
               <p className='mt-6 text-lg leading-8 text-mimitha-muted'>
                 Jajanan Mimitha hadir sebagai UMKM pastry Banyuwangi yang mengutamakan proses handmade,

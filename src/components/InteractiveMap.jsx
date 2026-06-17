@@ -5,14 +5,16 @@ import { useEffect, useRef } from 'react';
 export default function InteractiveMap() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const leafletLoaded = useRef(false);
 
   useEffect(() => {
-    if (leafletLoaded.current || !mapContainer.current) return;
+    if (!mapContainer.current) return;
 
     const initializeMap = async () => {
       const L = (await import('leaflet')).default;
       await import('leaflet/dist/leaflet.css');
+
+      // Check if map already exists on this container (prevents double init in StrictMode)
+      if (mapContainer.current._leaflet_id) return;
 
       // Fix default marker icons
       delete L.Icon.Default.prototype._getIconUrl;
@@ -50,14 +52,15 @@ export default function InteractiveMap() {
           window.open('https://maps.app.goo.gl/CfqPjyF7GfmAU1PL9', '_blank');
         }
       });
-
-      leafletLoaded.current = true;
     };
 
     initializeMap();
 
     return () => {
-      // Cleanup if needed
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
     };
   }, []);
 

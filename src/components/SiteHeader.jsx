@@ -25,8 +25,8 @@ export default function SiteHeader() {
             className='h-11 w-11 rounded-2xl object-cover shadow-lg shadow-mimitha-primary/20'
           />
           <span>
-            <span className='block text-sm font-bold uppercase tracking-[0.22em] text-mimitha-accent'>Jajanan Mimitha</span>
-            <span className='block text-xs font-semibold text-mimitha-muted'>Banyuwangi Pastry</span>
+            <span className='block text-sm font-bold uppercase tracking-[0.22em] text-mimitha-accent'>Jajannya Mimitha</span>
+            <span className='block text-xs font-semibold text-mimitha-muted'>Home Made Bakery</span>
           </span>
         </Link>
         <nav className='hidden items-center gap-1 lg:flex' aria-label='Navigasi utama'>
