@@ -126,7 +126,7 @@ export default function Home() {
 
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
                 Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span>momen spesial.
+                <span className="mimitha-gradient-text">Banyak</span> momen spesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
                 Jajanan Mimitha menghadirkan croissant, danish, dan pastry handmade dengan cita rasa hangat,
@@ -186,8 +186,8 @@ export default function Home() {
 
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {[
-                { value: '6+', label: 'Produk unggulan' },
-                { value: '1.000+', label: 'Pelanggan puas' },
+                { value: '5+', label: 'Produk unggulan' },
+                { value: '1.000+', label: 'Pelanggan' },
                 { value: 'Banyuwangi', label: 'Brand lokal' },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-[2rem] bg-white p-7 shadow-sm">
@@ -214,7 +214,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Best Seller Products</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
-              Pilihan pastry favorit pelanggan.
+              Pilihan pastry favorit anda.
             </h2>
             <p className="mt-5 text-lg leading-8 text-mimitha-muted">
               Katalog produk dapat difilter berdasarkan kategori, lalu langsung terhubung ke WhatsApp admin untuk
