@@ -50,12 +50,12 @@ const products = [
     image: "piscok.webp",
   },
   {
-    name: "Lilit Cokelat Keju",
+    name: "Lilit sosis",
     price: "Rp 6.000",
     category: "Lilit",
     description:
-      "Pastry manis  dan renyah dengan isian cokelat stick dan keju .",
-    image: "lilit-coklat.webp",
+      "Pastry manis  dan renyah dengan isian sosis dan keju .",
+    image: "lilit-sosis.webp",
   },
   {
     name: "Lilit Cokelat",
