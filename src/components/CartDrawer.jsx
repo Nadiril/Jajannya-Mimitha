@@ -73,7 +73,7 @@ export default function CartDrawer() {
         .join('\n')}\n\n*Total: ${formatPrice(totalPrice)}*`
     );
 
-    const whatsappNumber = '6285645700220';
+    const whatsappNumber = '628384892290';
     window.open(
       `https://wa.me/${whatsappNumber}?text=${checkoutMessage}`,
       '_blank'
