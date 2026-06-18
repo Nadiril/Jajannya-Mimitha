@@ -124,7 +124,7 @@ export default function Home() {
                 <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
-                Jajanan Mimitha menghadirkan croissant, andish, dan pastry handmade dengan cita rasa hangat,
+                Jajanan Mimitha menghadirkan pastry, brownies, dan banana bread handmade dengan cita rasa hangat,
                 elegan, dan autentik khas UMKM lokal Banyuwangi.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
