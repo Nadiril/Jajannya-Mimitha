@@ -61,6 +61,12 @@ const products = [
     description: 'Pastry manis  dan renyah dengan isian keju .',
   },
   {
+    name: 'Lilit sosis',
+    price: 'Rp 7.000',
+    category: 'Lilit',
+    description: 'Pastry manis, asin, gurih  dan renyah dengan isian sosis .',
+  },
+  {
     name: 'Fudgy Brownies',
     price: 'Rp 35.000',
     category: 'Brownies',
