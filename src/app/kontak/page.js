@@ -30,11 +30,13 @@ export default function KontakPage() {
                   </div>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
                     <p className='text-sm text-white/60'>WhatsApp</p>
-                    <p className='mt-2 font-bold'>+62 838-4892-2906</p>
+                    <p className='mt-2 font-bold'>+62 082140730031</p>
                   </div>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
                     <p className='text-sm text-white/60'>Jam Operasional</p>
-                    <p className='mt-2 font-bold'>Hubungi admin untuk info terbaru</p>
+                    <p className='mt-2 font-bold'>jam 07:00 - 21:00 WIB</p>
+                    <p className='mt-2 font-bold'>Setiap Hari</p>
+
                   </div>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
                     <p className='text-sm text-white/60'>Pemesanan</p>

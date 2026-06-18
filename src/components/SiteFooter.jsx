@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { navItems } from './navItems';
+import { whatsappUrl } from './SiteHeader';
 
 export default function SiteFooter() {
   return (
@@ -41,7 +42,9 @@ export default function SiteFooter() {
               {['Instagram', 'WhatsApp'].map((social) => (
                 <a
                   key={social}
-                  href='#'
+                  href={social === 'WhatsApp' ? whatsappUrl : 'https://www.instagram.com/jajannyamimitha?igsh=NHE2dXlwM21hemQy'}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='rounded-full border border-mimitha-primary/15 px-4 py-2 text-sm font-semibold text-mimitha-primary transition hover:bg-mimitha-primary hover:text-white'
                 >
                   {social}

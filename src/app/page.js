@@ -123,10 +123,9 @@ export default function Home() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255, 255, 255, 0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-5 lg:grid-cols-2 lg:px-5 lg:py-5">
             <div>
-
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
                 Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span> Momen Mpesial.
+                <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
                 Jajanan Mimitha menghadirkan croissant, andish, dan pastry handmade dengan cita rasa hangat,
@@ -148,10 +147,18 @@ export default function Home() {
                   Lihat Menu
                 </a>
               </div>
-</div>
             </div>
 
             <div className="relative">
+              <Image
+                src="/ProdukPage.webp"
+                alt="Produk Jajanan Mimitha"
+                width={400}
+                height={500}
+                className="h-auto w-full rounded-3xl object-cover shadow-2xl"
+                priority
+              />
+            </div>
           </div>
         </section>
 
@@ -177,7 +184,7 @@ export default function Home() {
               {[
                 { value: '5+', label: 'Produk unggulan' },
                 { value: '1.000+', label: 'Pelanggan' },
-                { value: 'Banyuwangi', label: 'Brand lokal' },
+                { value: 'Brand lokal', label: 'Banyuwangi' },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-[2rem] bg-white p-7 shadow-sm">
                   <p className="text-4xl font-black text-mimitha-primary">{stat.value}</p>
@@ -281,14 +288,6 @@ export default function Home() {
                 Alur pemesanan dibuat sesederhana mungkin agar pelanggan bisa langsung terhubung dengan admin
                 melalui WhatsApp.
               </p>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-mimitha-primary px-7 py-4 text-base font-bold text-white shadow-lg shadow-mimitha-primary/25 transition hover:bg-mimitha-text"
-              >
-                Hubungi Admin
-              </a>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
@@ -328,7 +327,7 @@ export default function Home() {
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">WhatsApp</p>
-                      <p className="mt-2 font-bold">+62 0812345678910</p>
+                      <p className="mt-2 font-bold">+62 082140730031</p>
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">Jam Operasional</p>
