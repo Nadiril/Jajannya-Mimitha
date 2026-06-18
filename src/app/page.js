@@ -44,10 +44,6 @@ const categories = [
     title: 'Savory Pastry',
     text: 'Isian gurih yang cocok untuk sarapan, bekal, atau acara keluarga.',
   },
-  {
-    title: 'Seasonal Menu',
-    text: 'Menu spesial musiman dengan cita rasa lokal Banyuwangi.',
-  },
 ];
 
 const journey = [
