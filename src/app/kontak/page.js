@@ -30,7 +30,7 @@ export default function KontakPage() {
                   </div>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
                     <p className='text-sm text-white/60'>WhatsApp</p>
-                    <p className='mt-2 font-bold'>+62 082140730031</p>
+                    <p className='mt-2 font-bold'>+62 083848922906</p>
                   </div>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
                     <p className='text-sm text-white/60'>Jam Operasional</p>
