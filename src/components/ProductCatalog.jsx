@@ -8,28 +8,28 @@ const categories = ['Semua', 'Bollendutt', 'Banana', 'Lilit', 'Brownies', 'Banan
 const products = [
   {
     name: "Bollendutt Pisang Cokelat Keju",
-    price: "Rp 6.000",
+    price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian pisang dan cokelat keju lumer.",
     image: "ProdukPage.webp", // Sesuaikan path folder gambar Anda
   },
   {
     name: "Bollendutt Pisang Coklat",
-    price: "Rp 6.000",
+    price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian pisang dan cokelat lumer.",
     image: "piscok.webp",
   },
   {
     name: "Bollendutt Pisang Keju susu",
-    price: "Rp 6.000",
+    price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "Pastry manis dengan isian pisang dan keju vanila lumer.",
     image: "bolen-pis-jusu.webp",
   },
   {
     name: "Bollendutt Cokelat Keju",
-    price: "Rp 6.000",
+    price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian cokelat dan keju lumer.",
     image: "cok-ju.webp",
@@ -51,7 +51,7 @@ const products = [
   },
   {
     name: "Lilit sosis",
-    price: "Rp 6.000",
+    price: "Rp 7.000/pcs",
     category: "Lilit",
     description:
       "Pastry manis  dan renyah dengan isian sosis dan keju .",
@@ -59,14 +59,14 @@ const products = [
   },
   {
     name: "Lilit Cokelat",
-    price: "Rp 6.000",
+    price: "Rp 7.000/pcs",
     category: "Lilit",
     description: "Pastry manis  dan renyah dengan isian cokelat stick .",
     image: "lilit-coklat.webp",
   },
   {
     name: "Lilit Keju",
-    price: "Rp 6.000",
+    price: "Rp 7.000/pcs",
     category: "Lilit",
     description: "Pastry manis  dan renyah dengan isian keju .",
     image: "lilit-sosis.webp", // Contoh penempatan file lilit-sosis.webp jika diperlukan

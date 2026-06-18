@@ -174,16 +174,6 @@ export default function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMenuOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text"
-            >
-              Pesan Sekarang
-            </a>
           </nav>
         </div>
       )}
