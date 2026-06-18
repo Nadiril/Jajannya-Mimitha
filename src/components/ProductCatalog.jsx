@@ -1,51 +1,82 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { useCart } from '@/context/CartContext';
 
-const categories = ['Semua', 'Croissant', 'Danish', 'Sweet Pastry', 'Savory Pastry', 'Seasonal Menu'];
+const categories = ['Semua', 'Bollendutt', 'Banana', 'Lilit', 'Brownies', 'Banana Bread'];
 
 const products = [
   {
-    name: 'Butter Croissant',
-    price: 'Rp 18.000',
-    category: 'Croissant',
-    description: 'Pastry renyah berlapis mentega dengan aroma panggang yang lembut.',
+    name: 'Bollendutt Pisang Cokelat Keju',
+    price: 'Rp 6.000',
+    category: 'Bollendutt',
+    description: 'pastry manis dengan isian pisang dan cokelat keju lumer.',
   },
   {
-    name: 'Pain Au Chocolat',
-    price: 'Rp 22.000',
-    category: 'Danish',
-    description: 'Adonan laminasi premium dengan isian cokelat lumer di setiap gigitan.',
+    name: 'Bollendutt Pisang Coklat',
+    price: 'Rp 6.000',
+    category: 'Bollendutt',
+    description: 'pastry manis dengan isian pisang dan cokelat lumer.',
   },
   {
-    name: 'Danish Fruit',
-    price: 'Rp 20.000',
-    category: 'Danish',
-    description: 'Pastry manis dengan topping buah segar dan krim lembut.',
+    name: 'Bollendutt Pisang Keju susu',
+    price: 'Rp 6.000',
+    category: 'Bollendutt',
+    description: 'Pastry manis dengan isian pisang dan keju vanila lumer.',
   },
   {
-    name: 'Cinnamon Roll',
-    price: 'Rp 21.000',
-    category: 'Sweet Pastry',
-    description: 'Gulungan pastry hangat dengan taburan cinnamon yang wangi.',
+    name: 'Bollendutt Cokelat Keju',
+    price: 'Rp 6.000',
+    category: 'Bollendutt',
+    description: 'pastry manis dengan isian cokelat dan keju lumer.',
   },
   {
-    name: 'Puff Pastry',
-    price: 'Rp 17.000',
-    category: 'Savory Pastry',
-    description: 'Tekstur berlapis ringan dengan pilihan isian gurih favorit keluarga.',
+    name: 'Banana Cheese Milk',
+    price: 'Rp 10.000',
+    category: 'Banana',
+    description: 'Ekstra toping keju dengan isian pisang dan keju vanila.',
   },
   {
-    name: 'Cheese Danish',
-    price: 'Rp 23.000',
-    category: 'Danish',
-    description: 'Perpaduan keju creamy dan pastry buttery yang gurih manis.',
+    name: 'Banana Chocolate Milk',
+    price: 'Rp 10.000',
+    category: 'Banana',
+    description: 'Ekstra toping keju coklat dengan isian pisang dan cokelat lumer.',
   },
   {
-    name: 'Croffle Banyuwangi',
-    price: 'Rp 25.000',
-    category: 'Seasonal Menu',
-    description: 'Menu spesial musiman dengan sensasi croissant dan waffle yang unik.',
+    name: 'Lilit Cokelat Keju',
+    price: 'Rp 6.000',
+    category: 'Lilit',
+    description: 'Pastry manis  dan renyah dengan isian cokelat stick dan keju .',
+  },
+  {
+    name: 'Lilit Cokelat',
+    price: 'Rp 6.000',
+    category: 'Lilit',
+    description: 'Pastry manis  dan renyah dengan isian cokelat stick .',
+  },
+  {
+    name: 'Lilit Keju',
+    price: 'Rp 6.000',
+    category: 'Lilit',
+    description: 'Pastry manis  dan renyah dengan isian keju .',
+  },
+  {
+    name: 'Fudgy Brownies',
+    price: 'Rp 35.000',
+    category: 'Brownies',
+    description: 'Brownies lembut dengan rasa cokelat  yang kaya dan toping bervariasi.',
+  },
+  {
+    name: 'Brownies Bites',
+    price: 'Rp 30.000',
+    category: 'Brownies',
+    description: 'Brownies lembut dengan rasa cokelat yang kaya.',
+  },
+  {
+    name: 'Banana Bread',
+    price: 'Rp 35.000',
+    category: 'Banana Bread',
+    description: 'Roti pisang lembut dengan rasa manis dan kaya akan isian pisang.',
   },
 ];
 
@@ -61,6 +92,7 @@ function whatsappProductUrl(product, whatsappNumber) {
 
 export default function ProductCatalog({ whatsappNumber }) {
   const [activeCategory, setActiveCategory] = useState('Semua');
+  const { addToCart } = useCart();
 
   const filteredProducts = useMemo(() => {
     if (activeCategory === 'Semua') {
@@ -124,14 +156,12 @@ export default function ProductCatalog({ whatsappNumber }) {
                 >
                   Lihat Detail
                 </a>
-                <a
-                  href={whatsappProductUrl(product, whatsappNumber)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => addToCart(product)}
                   className="inline-flex flex-1 items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text"
                 >
-                  Pesan Sekarang
-                </a>
+                  Tambah Keranjang
+                </button>
               </div>
             </div>
           </article>
