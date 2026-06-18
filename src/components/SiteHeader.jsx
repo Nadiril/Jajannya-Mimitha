@@ -15,7 +15,9 @@ export const whatsappUrl =
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isCartOpen, setIsCartOpen } = useCart();
+  const { isCartOpen, setIsCartOpen, cartItems } = useCart();
+
+  const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-mimitha-cream/90 shadow-sm backdrop-blur-xl">
@@ -84,6 +86,11 @@ export default function SiteHeader() {
               <circle cx="20" cy="21" r="1" />
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
+            {cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-mimitha-primary text-xs font-bold text-white shadow-md animate-pulse">
+                {cartItemCount}
+              </span>
+            )}
           </button>
         </div>
 
@@ -93,7 +100,7 @@ export default function SiteHeader() {
           <button
             type="button"
             onClick={() => setIsCartOpen(true)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-mimitha-primary/15 bg-white text-mimitha-text shadow-sm transition hover:bg-mimitha-cream hover:text-mimitha-primary"
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-mimitha-primary/15 bg-white text-mimitha-text shadow-sm transition hover:bg-mimitha-cream hover:text-mimitha-primary"
             aria-label="Buka keranjang belanja"
           >
             <svg
@@ -111,6 +118,11 @@ export default function SiteHeader() {
               <circle cx="20" cy="21" r="1" />
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
+            {cartItemCount > 0 && (
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-mimitha-primary text-[11px] font-bold text-white shadow-md animate-pulse">
+                {cartItemCount}
+              </span>
+            )}
           </button>
 
           <button

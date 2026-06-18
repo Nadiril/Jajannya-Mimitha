@@ -1,8 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { useCart } from '@/context/CartContext';
 
-const categories = ['Semua', 'Croissant', 'Danish', 'Sweet Pastry', 'Savory Pastry', 'Seasonal Menu'];
+const categories = ['Semua', 'Bollendutt', 'Banana', 'Lilit', 'Brownies', 'Banana Bread'];
 
 const products = [
   {
@@ -59,6 +60,24 @@ const products = [
     category: 'Lilit',
     description: 'Pastry manis  dan renyah dengan isian keju .',
   },
+  {
+    name: 'Fudgy Brownies',
+    price: 'Rp 35.000',
+    category: 'Brownies',
+    description: 'Brownies lembut dengan rasa cokelat  yang kaya dan toping bervariasi.',
+  },
+  {
+    name: 'Brownies Bites',
+    price: 'Rp 30.000',
+    category: 'Brownies',
+    description: 'Brownies lembut dengan rasa cokelat yang kaya.',
+  },
+  {
+    name: 'Banana Bread',
+    price: 'Rp 35.000',
+    category: 'Banana Bread',
+    description: 'Roti pisang lembut dengan rasa manis dan kaya akan isian pisang.',
+  },
 ];
 
 function productMessage(product) {
@@ -73,6 +92,7 @@ function whatsappProductUrl(product, whatsappNumber) {
 
 export default function ProductCatalog({ whatsappNumber }) {
   const [activeCategory, setActiveCategory] = useState('Semua');
+  const { addToCart } = useCart();
 
   const filteredProducts = useMemo(() => {
     if (activeCategory === 'Semua') {
@@ -136,14 +156,12 @@ export default function ProductCatalog({ whatsappNumber }) {
                 >
                   Lihat Detail
                 </a>
-                <a
-                  href={whatsappProductUrl(product, whatsappNumber)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => addToCart(product)}
                   className="inline-flex flex-1 items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text"
                 >
-                  Pesan Sekarang
-                </a>
+                  Tambah Keranjang
+                </button>
               </div>
             </div>
           </article>
