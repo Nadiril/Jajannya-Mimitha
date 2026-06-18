@@ -129,14 +129,6 @@ export default function Home() {
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-mimitha-primary px-7 py-4 text-base font-bold text-white shadow-lg shadow-mimitha-primary/25 transition hover:-translate-y-0.5 hover:bg-mimitha-text"
-                >
-                  Pesan Sekarang
-                </a>
-                <a
                   href="#produk"
                   className="inline-flex items-center justify-center rounded-full border border-mimitha-primary/25 bg-white px-7 py-4 text-base font-bold text-mimitha-primary transition hover:-translate-y-0.5 hover:border-mimitha-primary hover:bg-mimitha-cream"
                 >
@@ -323,7 +315,7 @@ export default function Home() {
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">WhatsApp</p>
-                      <p className="mt-2 font-bold">+62 082140730031</p>
+                      <p className="mt-2 font-bold">+62 083848922906</p>
                     </div>
                     <div className="rounded-[1.5rem] bg-white/10 p-5">
                       <p className="text-sm text-white/60">Jam Operasional</p>
