@@ -1,5 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import './globals.css';
+import { CartProvider } from '@/context/CartContext';
+import CartDrawer from '@/components/CartDrawer';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -38,7 +40,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${montserrat.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full flex flex-col bg-mimitha-background text-mimitha-text">
-        {children}
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );
