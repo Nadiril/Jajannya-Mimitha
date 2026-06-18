@@ -146,7 +146,7 @@ export default function Home() {
 
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {[
-                { value: '5+', label: 'Produk unggulan' },
+                { value: '12+', label: 'Produk' },
                 { value: '1.000+', label: 'Pelanggan' },
                 { value: 'Brand lokal', label: 'Banyuwangi' },
               ].map((stat) => (
