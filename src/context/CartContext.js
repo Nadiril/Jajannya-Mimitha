@@ -7,6 +7,7 @@ const CartContext = createContext(null);
 export function CartProvider({ children }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [qrisImageUrl, setQrisImageUrl] = useState('/qris.webp');
 
   const addToCart = (product) => {
     setCartItems((prev) => {
@@ -52,6 +53,8 @@ export function CartProvider({ children }) {
         removeFromCart,
         updateQuantity,
         clearCart,
+        qrisImageUrl,
+        setQrisImageUrl,
       }}
     >
       {children}

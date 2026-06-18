@@ -7,6 +7,25 @@ export const metadata = {
   description: 'Katalog produk Jajanan Mimitha Banyuwangi: croissant, danish, sweet pastry, savory pastry, dan seasonal menu.',
 };
 
+const categories = [
+  {
+    title: 'Croissant',
+    text: 'Renyah, buttery, dan berlapis sempurna untuk camilan premium.',
+  },
+  {
+    title: 'Danish',
+    text: 'Manis lembut dengan topping buah, cokelat, atau keju creamy.',
+  },
+  {
+    title: 'Sweet Pastry',
+    text: 'Pilihan pastry manis untuk menemani kopi dan momen santai.',
+  },
+  {
+    title: 'Savory Pastry',
+    text: 'Isian gurih yang cocok untuk sarapan, bekal, atau acara keluarga.',
+  },
+];
+
 export default function ProdukPage() {
   return (
     <>

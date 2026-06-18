@@ -130,10 +130,10 @@ export default function ProductCatalog({ whatsappNumber }) {
             type="button"
             onClick={() => setActiveCategory(category)}
             className={[
-              "rounded-full px-5 py-2 text-sm font-semibold transition",
-              activeCategory === category
-                ? "bg-mimitha-primary text-white shadow-lg shadow-mimitha-primary/25"
-                : "border border-mimitha-primary/20 bg-white text-mimitha-text hover:border-mimitha-primary hover:bg-mimitha-cream",
+               "rounded-full px-5 py-2 text-sm font-semibold ",
+               activeCategory === category
+                 ? "bg-mimitha-primary text-white shadow-lg shadow-mimitha-primary/25"
+                 : "border border-mimitha-primary/20 bg-white text-mimitha-text",
             ].join(" ")}
           >
             {category}
@@ -157,23 +157,22 @@ export default function ProductCatalog({ whatsappNumber }) {
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-              <div className="mb-4 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-mimitha-accent">
-                    {product.category}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-bold text-mimitha-text">
-                    {product.name}
-                  </h3>
-                </div>
-                <p className="rounded-full bg-mimitha-cream px-3 py-1 text-sm font-bold text-mimitha-primary">
-                  {product.price}
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-mimitha-accent">
+                  {product.category}
                 </p>
+                <h3 className="mt-2 text-2xl font-bold text-mimitha-text">
+                  {product.name}
+                </h3>
               </div>
-
               <p className="text-base leading-7 text-mimitha-muted">
                 {product.description}
               </p>
+              <div className="mt-3">
+                <p className="inline-block rounded-full bg-mimitha-cream px-3 py-1 text-sm font-bold text-mimitha-primary">
+                  {product.price}
+                </p>
+              </div>
 
               <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
                 <a

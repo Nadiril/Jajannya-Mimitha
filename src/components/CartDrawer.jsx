@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 
 export default function CartDrawer() {
-  const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity } =
+  const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity, qrisImageUrl } =
     useCart();
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    paymentMethod: 'transfer',
+    paymentMethod: 'qris',
   });
   const [errors, setErrors] = useState({});
 
@@ -62,10 +62,10 @@ export default function CartDrawer() {
     e.preventDefault();
     if (!validateForm()) return;
 
+    const paymentLabel = formData.paymentMethod === 'qris' ? 'QRIS' : 'COD (Bayar di Tempat)';
+
     const checkoutMessage = encodeURIComponent(
-      `Halo Jajanan Mimitha\n\n*Data Pemesanan:*\nNama: ${formData.name}\nNo HP: ${formData.phone}\n\nMetode Pembayaran: ${
-        formData.paymentMethod === 'transfer' ? 'Transfer Bank' : 'COD'
-      }\n\n*Detail Pesanan:*\n${cartItems
+      `Halo Jajanan Mimitha\n\n*Data Pemesanan:*\nNama: ${formData.name}\nNo HP: ${formData.phone}\n\nMetode Pembayaran: ${paymentLabel}\n\n*Detail Pesanan:*\n${cartItems
         .map(
           (item) =>
             `- ${item.name} x${item.quantity} (${formatPrice(parsePrice(item.price) * item.quantity)})`
@@ -78,10 +78,9 @@ export default function CartDrawer() {
       `https://wa.me/${whatsappNumber}?text=${checkoutMessage}`,
       '_blank'
     );
-    
-    // Reset form dan close drawer
+
     setShowPaymentForm(false);
-    setFormData({ name: '', phone: '', paymentMethod: 'transfer' });
+    setFormData({ name: '', phone: '', paymentMethod: 'qris' });
     setIsCartOpen(false);
   };
 
@@ -111,8 +110,8 @@ export default function CartDrawer() {
         aria-modal="true"
         aria-label="Keranjang Belanja"
       >
-        {/* Drawer header */}
-        <div className="flex items-center justify-between border-b border-mimitha-primary/10 px-6 py-5">
+        {/* Drawer header - FIXED TOP */}
+        <div className="flex-none flex items-center justify-between border-b border-mimitha-primary/10 px-6 py-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-mimitha-primary">
               Keranjang Belanja
@@ -124,7 +123,7 @@ export default function CartDrawer() {
 
           <button
             onClick={() => setIsCartOpen(false)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-mimitha-text shadow-sm transition hover:bg-mimitha-warm hover:text-mimitha-primary"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-mimitha-text shadow-sm"
             aria-label="Tutup keranjang belanja"
           >
             <svg
@@ -144,10 +143,10 @@ export default function CartDrawer() {
           </button>
         </div>
 
+        {/* Scrollable content area */}
         {cartItems.length === 0 ? (
-          // Empty state
-          <div className="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-mimitha-warm/50">
+          <div className="flex-1 overflow-y-auto px-6 py-16 text-center">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-mimitha-warm/50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
@@ -173,90 +172,70 @@ export default function CartDrawer() {
             </p>
           </div>
         ) : (
-          <>
-            {/* Drawer body - Cart items */}
-            <div className="flex-1 overflow-y-auto px-6 py-6">
-              <div className="space-y-4">
-                {cartItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex gap-4 rounded-lg border border-mimitha-primary/10 bg-white p-4"
-                  >
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-mimitha-text">
-                        {item.name}
-                      </h3>
-                      <p className="mt-1 text-sm text-mimitha-primary">
-                        {formatPrice(parsePrice(item.price))}
-                      </p>
-                      <div className="mt-3 flex items-center gap-2">
-                        <button
-                          onClick={() =>
-                            updateQuantity(item.name, item.quantity - 1)
-                          }
-                          className="flex h-7 w-7 items-center justify-center rounded border border-mimitha-primary/20 text-sm font-semibold text-mimitha-primary transition hover:bg-mimitha-warm"
-                        >
-                          −
-                        </button>
-                        <span className="w-8 text-center text-sm font-semibold">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() =>
-                            updateQuantity(item.name, item.quantity + 1)
-                          }
-                          className="flex h-7 w-7 items-center justify-center rounded border border-mimitha-primary/20 text-sm font-semibold text-mimitha-primary transition hover:bg-mimitha-warm"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => removeFromCart(item.name)}
-                      className="mt-1 flex h-8 w-8 items-center justify-center rounded-full text-mimitha-muted transition hover:bg-red-50 hover:text-red-500"
-                      aria-label="Hapus dari keranjang"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+          <div className="flex-1 overflow-y-auto px-6 py-6">
+            <div className="space-y-4">
+              {cartItems.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex gap-4 rounded-lg border border-mimitha-primary/10 bg-white p-4"
+                >
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-mimitha-text">
+                      {item.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-mimitha-primary">
+                      {formatPrice(parsePrice(item.price))}
+                    </p>
+                    <div className="mt-3 flex items-center gap-2">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.name, item.quantity - 1)
+                        }
+                        className="flex h-7 w-7 items-center justify-center rounded border border-mimitha-primary/20 text-sm font-semibold text-mimitha-primary bg-mimitha-warm"
                       >
-                        <polyline points="3 6 5 6 21 6" />
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                        <line x1="10" y1="11" x2="10" y2="17" />
-                        <line x1="14" y1="11" x2="14" y2="17" />
-                      </svg>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Drawer footer */}
-            <div className="border-t border-mimitha-primary/10 px-6 py-5">
-              {!showPaymentForm ? (
-                <>
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="font-semibold text-mimitha-text">Total:</span>
-                    <span className="text-2xl font-black text-mimitha-primary">
-                      {formatPrice(totalPrice)}
-                    </span>
+                        −
+                      </button>
+                      <span className="w-8 text-center text-sm font-semibold">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.name, item.quantity + 1)
+                        }
+                        className="flex h-7 w-7 items-center justify-center rounded border border-mimitha-primary/20 text-sm font-semibold text-mimitha-primary bg-mimitha-warm"
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
                   <button
-                    onClick={() => setShowPaymentForm(true)}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text"
+                    onClick={() => removeFromCart(item.name)}
+                    className="mt-1 flex h-8 w-8 items-center justify-center rounded-full text-mimitha-muted bg-transparent"
+                    aria-label="Hapus dari keranjang"
                   >
-                    Lanjutkan Pembayaran
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="3 6 5 6 21 6" />
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                      <line x1="10" y1="11" x2="10" y2="17" />
+                      <line x1="14" y1="11" x2="14" y2="17" />
+                    </svg>
                   </button>
-                </>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                </div>
+              ))}
+
+              {/* Payment form - inside scrollable area */}
+              {showPaymentForm && (
+                <form id="payment-form" onSubmit={handleSubmit} className="mt-6 space-y-4">
                   <div>
                     <label className="mb-2 block text-sm font-semibold text-mimitha-text">
                       Nama Lengkap
@@ -320,30 +299,70 @@ export default function CartDrawer() {
                       onChange={handleInputChange}
                       className="w-full rounded-lg border border-mimitha-primary/20 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-mimitha-primary/20"
                     >
-                      <option value="transfer">Transfer Bank</option>
+                      <option value="qris">QRIS</option>
                       <option value="cod">COD (Bayar di Tempat)</option>
                     </select>
                   </div>
 
-                  <div className="flex gap-2 pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setShowPaymentForm(false)}
-                      className="flex-1 rounded-full border border-mimitha-primary px-4 py-2.5 text-sm font-bold text-mimitha-primary transition hover:bg-mimitha-warm"
-                    >
-                      Kembali
-                    </button>
-                    <button
-                      type="submit"
-                      className="flex-1 rounded-full bg-mimitha-primary px-4 py-2.5 text-sm font-bold text-white transition hover:bg-mimitha-text"
-                    >
-                      Konfirmasi Pesanan
-                    </button>
-                  </div>
+                  {formData.paymentMethod === 'qris' && (
+                    <div className="mt-4 rounded-xl border border-mimitha-primary/10 bg-white p-4 text-center">
+                      <p className="mb-3 text-sm font-semibold text-mimitha-text">
+                        Scan QR Code untuk Pembayaran
+                      </p>
+                      <img
+                        src={qrisImageUrl}
+                        alt="QRIS Pembayaran"
+                        className="mx-auto h-auto w-48"
+                      />
+                      <p className="mt-3 text-xs text-mimitha-muted">
+                        Setelah scan/transfer, klik tombol di bawah ini
+                      </p>
+                    </div>
+                  )}
                 </form>
               )}
             </div>
-          </>
+          </div>
+        )}
+
+        {/* Fixed footer - only action buttons */}
+        {cartItems.length > 0 && (
+          <div className="flex-none border-t border-mimitha-primary/10 px-6 py-5">
+            {!showPaymentForm ? (
+              <>
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="font-semibold text-mimitha-text">Total:</span>
+                  <span className="text-2xl font-black text-mimitha-primary">
+                    {formatPrice(totalPrice)}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowPaymentForm(true)}
+                  className="inline-flex w-full items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white"
+                >
+                  Lanjutkan Pembayaran
+                </button>
+              </>
+            ) : (
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowPaymentForm(false)}
+                  className="flex-1 rounded-full border border-mimitha-primary px-4 py-2.5 text-sm font-bold text-mimitha-primary bg-transparent"
+                >
+                  Kembali
+                </button>
+                <button
+                  type="submit"
+                  form="payment-form"
+                  className="flex-1 rounded-full bg-mimitha-primary px-4 py-2.5 text-sm font-bold text-white"
+                >
+                  {formData.paymentMethod === 'qris' ? 'Konfirmasi Pesanan' : 'Konfirmasi Pesanan'}
+                </button>
+              </div>
+            )}
+          </div>
         )}
       </aside>
     </>

@@ -46,38 +46,6 @@ const categories = [
   },
 ];
 
-const journey = [
-  {
-    step: '01',
-    title: 'Pemilihan Bahan',
-    text: 'Bahan baku pilihan disortir untuk memastikan kualitas rasa dan tekstur.',
-  },
-  {
-    step: '02',
-    title: 'Pembuatan Adonan',
-    text: 'Adonan dicampur dengan takaran presisi agar hasilnya konsisten.',
-  },
-  {
-    step: '03',
-    title: 'Laminasi Adonan',
-    text: 'Adonan dilipat berlapis untuk menghasilkan tekstur pastry yang renyah.',
-  },
-  {
-    step: '04',
-    title: 'Fermentasi',
-    text: 'Proses fermentasi membantu pastry mengembang dan aromanya lebih harum.',
-  },
-  {
-    step: '05',
-    title: 'Pemanggangan',
-    text: 'Pastry dipanggang dengan suhu terkontrol hingga berwarna keemasan.',
-  },
-  {
-    step: '06',
-    title: 'Pengemasan',
-    text: 'Produk dikemas aman dan higienis sebelum siap dipesan pelanggan.',
-  },
-];
 
 const testimonials = [
   {
@@ -116,41 +84,43 @@ export default function Home() {
 
       <main id="main">
         <section id="beranda" className="mimitha-section relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255, 255, 255, 0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-5 lg:grid-cols-2 lg:px-5 lg:py-5">
-            <div>
-              <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
+          <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-16">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl font-black leading-[1.1] tracking-tight text-mimitha-text sm:text-5xl lg:text-6xl">
                 Satu Gigitan {' '}
                 <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
-                Jajanan Mimitha menghadirkan croissant, andish, dan pastry handmade dengan cita rasa hangat,
+              <p className="mt-5 max-w-xl text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
+                Jajanan Mimitha menghadirkan pastry, brownis, dan Banana Bread handmade dengan cita rasa hangat,
                 elegan, dan autentik khas UMKM lokal Banyuwangi.
               </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#produk"
-                  className="inline-flex items-center justify-center rounded-full border border-mimitha-primary/25 bg-white px-7 py-4 text-base font-bold text-mimitha-primary transition hover:-translate-y-0.5 hover:border-mimitha-primary hover:bg-mimitha-cream"
+                  className="inline-flex items-center justify-center rounded-full border border-mimitha-primary/25 bg-mimitha-primary px-7 py-3.5 text-base font-bold shadow-lg shadow-mimitha-primary/20 sm:py-4"
+                  style={{ color: '#ffffff' }}
                 >
                   Lihat Menu
                 </a>
+
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative flex items-center">
               <Image
                 src="/ProdukPage.webp"
                 alt="Produk Jajanan Mimitha"
                 width={400}
                 height={500}
-                className="h-auto w-full rounded-3xl object-cover shadow-2xl"
+                className="h-auto w-full max-w-md rounded-3xl object-cover shadow-2xl lg:mx-auto"
                 priority
               />
             </div>
           </div>
         </section>
 
-        <section id="tentang" className="mimitha-section mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
+        <section id="tentang" className="mimitha-section mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">About Us</p>
@@ -184,7 +154,7 @@ export default function Home() {
         </section>
 
         <section className="bg-mimitha-primary text-white">
-          <div className="mx-auto grid max-w-7xl gap-8 px-2.5 py-16 lg:grid-cols-5 lg:px-2.5">
+          <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-5 lg:px-8">
             {qualities.map((quality) => (
               <article key={quality.title} className="rounded-[2rem] bg-white/10 p-6 backdrop-blur">
                 <h3 className="text-xl font-bold">{quality.title}</h3>
@@ -194,7 +164,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="produk" className="mimitha-section mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
+        <section id="produk" className="mimitha-section mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Best Seller Products</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
@@ -211,34 +181,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-mimitha-cream/70">
-          <div className="mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Product Categories</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
-                Temukan kategori sesuai kebutuhanmu.
-              </h2>
-            </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {categories.map((category) => (
-                <article key={category.title} className="rounded-[2rem] bg-white p-7 shadow-sm">
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-mimitha-warm text-2xl font-black text-mimitha-primary">
-                    {category.title.charAt(0)}
-                  </div>
-                  <h3 className="text-2xl font-bold text-mimitha-text">{category.title}</h3>
-                  <p className="mt-3 leading-7 text-mimitha-muted">{category.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
    
 
 
         <section id="testimoni" className="mimitha-section bg-mimitha-primary">
-          <div className="mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
+          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="mx-auto max-w-3xl text-center text-white">
               <p className="text-sm font-black uppercase tracking-[0.24em] text-amber-200">Testimonials</p>
               <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Apa Kata Mereka Tentang Jajannya Mimitha?</h2>
@@ -265,12 +214,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
+        <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">How To Order</p>
               <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
-                Pesan mudah tanpa perlu akun.
+                Pesan lebih mudah tanpa ribet.
               </h2>
               <p className="mt-6 text-lg leading-8 text-mimitha-muted">
                 Alur pemesanan dibuat sesederhana mungkin agar pelanggan bisa langsung terhubung dengan admin
@@ -295,7 +244,7 @@ export default function Home() {
         </section>
 
         <section id="kontak" className="mimitha-section bg-mimitha-cream/70">
-          <div className="mx-auto max-w-7xl px-2.5 py-20 lg:px-2.5">
+          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
             <div className="overflow-hidden rounded-[2.5rem] bg-mimitha-primary text-white shadow-2xl shadow-mimitha-primary/20">
               <div className="grid lg:grid-cols-[1fr_1fr]">
                 <div className="p-8 sm:p-10 lg:p-14">
@@ -333,7 +282,7 @@ export default function Home() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-mimitha-primary"
+                      className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white"
                     >
                     
                       Hubungi Kami
@@ -342,10 +291,12 @@ export default function Home() {
                       href="https://www.google.com/maps/place/Playwithmii+X+Jajannyamimitha/@-8.2243917,114.3573971,17z/data=!4m15!1m8!3m7!1s0x2dd145000d227e0f:0x43670086506b6d1e!2sPlaywithmii+X+Jajannyamimitha!8m2!3d-8.224397!4d114.3622627!10e1!16s%2Fg%2F11mm6lzmgp!3m5!1s0x2dd145000d227e0f:0x43670086506b6d1e!8m2!3d-8.224397!4d114.3622627!16s%2Fg%2F11mm6lzmgp?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-mimitha-primary"
+                      className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white"
                     >
                       Buka Google Maps
                     </a>
+                    
+                   
                   </div>
                 </div>
 
