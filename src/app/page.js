@@ -44,6 +44,10 @@ const categories = [
     title: 'Savory Pastry',
     text: 'Isian gurih yang cocok untuk sarapan, bekal, atau acara keluarga.',
   },
+  {
+    title: 'Seasonal Menu',
+    text: 'Menu spesial musiman dengan cita rasa lokal Banyuwangi.',
+  },
 ];
 
 const journey = [
@@ -121,7 +125,7 @@ export default function Home() {
             <div>
               <h1 className="max-w-3xl text-5xl font-black leading-[1.05] tracking-tight text-mimitha-text sm:text-6xl lg:text-7xl">
                 Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
+                <span className="mimitha-gradient-text">Banyak</span> Momen Mpesial.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-mimitha-muted sm:text-xl">
                 Jajanan Mimitha menghadirkan croissant, andish, dan pastry handmade dengan cita rasa hangat,
@@ -149,8 +153,8 @@ export default function Home() {
               <Image
                 src="/ProdukPage.webp"
                 alt="Produk Jajanan Mimitha"
-                width={400}
-                height={500}
+                width={700}
+                height={800}
                 className="h-auto w-full rounded-3xl object-cover shadow-2xl"
                 priority
               />
