@@ -39,7 +39,7 @@ export default function TentangPage() {
               </p>
               <p className='mt-4 text-lg leading-8 text-mimitha-muted'>
                 Visi kami sederhana: memperkenalkan pastry lokal yang tidak hanya enak, tetapi juga rapi,
-                higienis, dan mudah dipesan melalui WhatsApp.
+                higienis, dan mudah dipesan melalui online maupun offline.
               </p>
             </div>
             <div className='grid gap-4 sm:grid-cols-3 lg:grid-cols-1'>
