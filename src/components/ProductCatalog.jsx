@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 
-const categories = ['Semua', 'Bollendutt', 'Pisang', 'Lilit', 'Brownies', 'Roti Pisang'];
+const categories = ['Semua', 'Bollendutt', 'Pisang', 'Lilit', 'Brownies', 'Banana Bread'];
 
 const products = [
   {
@@ -11,35 +11,35 @@ const products = [
     price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian pisang dan cokelat keju lumer.",
-    image: "ProdukPage.webp", // Sesuaikan path folder gambar Anda
+    image: "/ProdukPage.webp",
   },
   {
     name: "Bollendutt Pisang Coklat",
     price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian pisang dan cokelat lumer.",
-    image: "piscok.webp",
+    image: "/piscok.webp",
   },
   {
     name: "Bollendutt Pisang Keju susu",
     price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "Pastry manis dengan isian pisang dan keju vanila lumer.",
-    image: "bolen-pis-jusu.webp",
+    image: "/bolen-pis-jusu.webp",
   },
   {
     name: "Bollendutt Cokelat Keju",
     price: "Rp 6.000/pcs",
     category: "Bollendutt",
     description: "pastry manis dengan isian cokelat dan keju lumer.",
-    image: "cok-ju.webp",
+    image: "/cok-ju.webp",
   },
   {
     name: "Banana Cheese Milk",
     price: "Rp 10.000",
     category: "Banana",
     description: "Ekstra toping keju dengan isian pisang dan keju vanila.",
-    image: "bolen-pis-jusu.webp", // Bisa gunakan gambar bolen keju susu sebagai penanda sementara
+    image: "/bolen-pis-jusu.webp", // Bisa gunakan gambar bolen keju susu sebagai penanda sementara
   },
   {
     name: "Banana Chocolate Milk",
@@ -47,7 +47,7 @@ const products = [
     category: "Banana",
     description:
       "Ekstra toping keju coklat dengan isian pisang dan cokelat lumer.",
-    image: "piscok.webp",
+    image: "/piscok.webp",
   },
   {
     name: "Lilit sosis",
@@ -55,21 +55,21 @@ const products = [
     category: "Lilit",
     description:
       "Pastry manis  dan renyah dengan isian sosis dan keju .",
-    image: "lilit-sosis.webp",
+    image: "/lilit-sosis.webp",
   },
   {
     name: "Lilit Cokelat",
     price: "Rp 7.000/pcs",
     category: "Lilit",
     description: "Pastry manis  dan renyah dengan isian cokelat stick .",
-    image: "lilit-coklat.webp",
+    image: "/lilit-coklat.webp",
   },
   {
     name: "Lilit Keju",
     price: "Rp 7.000/pcs",
     category: "Lilit",
     description: "Pastry manis  dan renyah dengan isian keju .",
-    image: "lilit-sosis.webp", // Contoh penempatan file lilit-sosis.webp jika diperlukan
+    image: "/lilit-sosis.webp", // Contoh penempatan file lilit-sosis.webp jika diperlukan
   },
   {
     name: "Fudgy Brownies",
@@ -77,14 +77,14 @@ const products = [
     category: "Brownies",
     description:
       "Brownies lembut dengan rasa cokelat  yang kaya dan toping bervariasi.",
-    image: "fudgybrownies.webp",
+    image: "/fudgybrownies.webp",
   },
   {
     name: "Brownies Bites",
     price: "Rp 30.000",
     category: "Brownies",
     description: "Brownies lembut dengan rasa cokelat yang kaya.",
-    image: "Brownis-bites.webp",
+    image: "/Brownis-bites.webp",
   },
   {
     name: "Banana Bread",
@@ -92,7 +92,7 @@ const products = [
     category: "Banana Bread",
     description:
       "Roti pisang lembut dengan rasa manis dan kaya akan isian pisang.",
-    image: "BanaBread.webp",
+    image: "/BanaBread.webp",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function ProductCatalog({ whatsappNumber }) {
             {/* SESUDAH */}
             <div className="relative h-56 overflow-hidden bg-gradient-to-br from-mimitha-warm via-mimitha-cream to-amber-100">
               <img
-                src={product.image || "/images/default-placeholder.webp"}
+                src={product.image || "/ProdukPage.webp"}
                 alt={product.name}
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
@@ -175,12 +175,6 @@ export default function ProductCatalog({ whatsappNumber }) {
               </div>
 
               <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
-                <a
-                  href="#kontak"
-                  className="inline-flex items-center justify-center rounded-full border border-mimitha-primary/25 px-5 py-3 text-sm font-bold text-mimitha-primary transition hover:bg-mimitha-primary hover:text-white"
-                >
-                  Lihat Detail
-                </a>
                 <button
                   onClick={() => addToCart(product)}
                   className="inline-flex flex-1 items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-mimitha-text"

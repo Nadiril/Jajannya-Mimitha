@@ -1,5 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import './globals.css';
+import { NotificationProvider } from '@/context/NotificationContext';
+import Toast from '@/components/Toast';
 import { CartProvider } from '@/context/CartContext';
 import CartDrawer from '@/components/CartDrawer';
 
@@ -47,10 +49,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${montserrat.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full flex flex-col bg-mimitha-background text-mimitha-text">
-        <CartProvider>
-          {children}
-          <CartDrawer />
-        </CartProvider>
+        <NotificationProvider>
+          <CartProvider>
+            {children}
+            <CartDrawer />
+            <Toast />
+          </CartProvider>
+        </NotificationProvider>
       </body>
     </html>
   );

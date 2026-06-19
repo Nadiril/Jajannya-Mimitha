@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import { useNotification } from '@/context/NotificationContext';
 
 export default function CartDrawer() {
-  const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity, qrisImageUrl } =
+  const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity, qrisImageUrl, clearCart } =
     useCart();
+  const { addNotification } = useNotification();
   const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [orderReceived, setOrderReceived] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -79,9 +82,16 @@ export default function CartDrawer() {
       '_blank'
     );
 
+    clearCart();
     setShowPaymentForm(false);
+    setOrderReceived(true);
+    setIsCartOpen(true);
     setFormData({ name: '', phone: '', paymentMethod: 'qris' });
-    setIsCartOpen(false);
+    addNotification(
+      'Pesanan telah diterima. Terima kasih telah memesan di Jajanan Mimitha.',
+      'success',
+      5000
+    );
   };
 
   const handleInputChange = (e) => {
@@ -92,6 +102,16 @@ export default function CartDrawer() {
     }
   };
 
+  const closeCartDrawer = () => {
+    setIsCartOpen(false);
+    setOrderReceived(false);
+  };
+
+  const shouldShowFooter = cartItems.length > 0 || orderReceived;
+  const showCartSummary = !showPaymentForm && !orderReceived;
+  const showOrderReceived = orderReceived;
+  const showPaymentControls = showPaymentForm && !orderReceived;
+
   if (!isCartOpen) return null;
 
   return (
@@ -99,7 +119,7 @@ export default function CartDrawer() {
       {/* Overlay backdrop */}
       <div
         className="fixed inset-0 z-[90] bg-black/30 backdrop-blur-sm"
-        onClick={() => setIsCartOpen(false)}
+        onClick={closeCartDrawer}
         aria-hidden="true"
       />
 
@@ -122,7 +142,7 @@ export default function CartDrawer() {
           </div>
 
           <button
-            onClick={() => setIsCartOpen(false)}
+            onClick={closeCartDrawer}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-mimitha-text shadow-sm"
             aria-label="Tutup keranjang belanja"
           >
@@ -145,32 +165,60 @@ export default function CartDrawer() {
 
         {/* Scrollable content area */}
         {cartItems.length === 0 ? (
-          <div className="flex-1 overflow-y-auto px-6 py-16 text-center">
-            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-mimitha-warm/50">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-mimitha-primary"
-              >
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-              </svg>
+          orderReceived ? (
+            <div className="flex-1 overflow-y-auto px-6 py-16 text-center">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="34"
+                  height="34"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-green-600"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <p className="text-lg font-bold text-mimitha-text">
+                Pesanan Telah Diterima
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-mimitha-muted">
+                Terima kasih telah memesan di Jajanan Mimitha. Kami akan segera
+                memproses pesanan Anda.
+              </p>
             </div>
-            <p className="text-lg font-bold text-mimitha-text">
-              Keranjang belanja masih kosong
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-mimitha-muted">
-              Tambahkan produk favorit Anda ke dalam keranjang
-            </p>
-          </div>
+          ) : (
+            <div className="flex-1 overflow-y-auto px-6 py-16 text-center">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-mimitha-warm/50">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-mimitha-primary"
+                >
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+              </div>
+              <p className="text-lg font-bold text-mimitha-text">
+                Keranjang belanja masih kosong
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-mimitha-muted">
+                Tambahkan produk favorit Anda ke dalam keranjang
+              </p>
+            </div>
+          )
         ) : (
           <div className="flex-1 overflow-y-auto px-6 py-6">
             <div className="space-y-4">
@@ -326,9 +374,9 @@ export default function CartDrawer() {
         )}
 
         {/* Fixed footer - only action buttons */}
-        {cartItems.length > 0 && (
+        {shouldShowFooter && (
           <div className="flex-none border-t border-mimitha-primary/10 px-6 py-5">
-            {!showPaymentForm ? (
+            {showCartSummary && (
               <>
                 <div className="mb-4 flex items-center justify-between">
                   <span className="font-semibold text-mimitha-text">Total:</span>
@@ -344,7 +392,17 @@ export default function CartDrawer() {
                   Lanjutkan Pembayaran
                 </button>
               </>
-            ) : (
+            )}
+            {showOrderReceived && (
+              <button
+                type="button"
+                onClick={closeCartDrawer}
+                className="inline-flex w-full items-center justify-center rounded-full bg-mimitha-primary px-5 py-3 text-sm font-bold text-white"
+              >
+                Tutup Keranjang
+              </button>
+            )}
+            {showPaymentControls && (
               <div className="flex gap-2">
                 <button
                   type="button"
@@ -358,7 +416,7 @@ export default function CartDrawer() {
                   form="payment-form"
                   className="flex-1 rounded-full bg-mimitha-primary px-4 py-2.5 text-sm font-bold text-white"
                 >
-                  {formData.paymentMethod === 'qris' ? 'Konfirmasi Pesanan' : 'Konfirmasi Pesanan'}
+                  Konfirmasi Pesanan
                 </button>
               </div>
             )}
