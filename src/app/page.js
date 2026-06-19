@@ -75,12 +75,12 @@ const testimonials = [
 ];
 
 const orderSteps = [
-  { number: '1', title: 'Pilih Produk', text: 'Lihat katalog dan tentukan pastry favoritmu.' },
-  { number: '2', title: 'Klik Pesan', text: 'Tombol pesan akan membuka percakapan WhatsApp.' },
-  { number: '3', title: 'Konfirmasi Pesanan', text: 'Admin membantu memastikan jumlah dan varian produk.' },
-  { number: '4', title: 'Pembayaran', text: 'Lakukan pembayaran sesuai instruksi admin.' },
-  { number: '5', title: 'Pesanan Diproses', text: 'Produk dibuat fresh sesuai jadwal pemesanan.' },
-  { number: '6', title: 'Pesanan Dikirim', text: 'Ambil di lokasi atau koordinasikan pengiriman dengan admin.' },
+  { number: '1', title: 'Buka Katalog', text: 'Pilih kategori produk lalu lihat detail varian pastry yang tersedia.' },
+  { number: '2', title: 'Tambah ke Keranjang', text: 'Klik Tambah Keranjang untuk mengumpulkan produk yang ingin dipesan.' },
+  { number: '3', title: 'Pilih Ambil atau Kirim', text: 'Tentukan metode pengambilan, apakah ambil langsung atau koordinasikan pengiriman.' },
+  { number: '4', title: 'Hubungi Admin via WhatsApp', text: 'Lanjutkan pesanan agar detail produk, jumlah, dan total harga dikonfirmasi admin.' },
+  { number: '5', title: 'Konfirmasi Pembayaran', text: 'Admin akan memberikan instruksi pembayaran sesuai metode yang tersedia.' },
+  { number: '6', title: 'Produk Dibuat Fresh', text: 'Pesanan diproses dan disiapkan agar tetap segar saat diterima.' },
 ];
 
 export default function Home() {
@@ -243,19 +243,18 @@ export default function Home() {
           Bagaimana cara memesan?
         </p>
         <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
-          Pesan lebih mudah tanpa ribet.
+          Pesan lebih mudah langsung dari katalog produk.
         </h2>
         <p className="mt-5 text-lg leading-8 text-mimitha-muted">
-          Alur pemesanan dibuat sesederhana mungkin agar pelanggan bisa langsung terhubung dengan admin
-          melalui WhatsApp.
+          Pilih produk favorit, masukkan ke keranjang, lalu selesaikan detail pesanan bersama admin
+          melalui WhatsApp agar lebih cepat dan praktis.
         </p>
                 <div className="mt-8">
                   <a
                     href="#produk"
                     className="inline-flex items-center justify-center rounded-full bg-mimitha-primary px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-mimitha-primary/20 sm:py-4"
-                    style={{ color: '#ffffff' }}
                   >
-                    Lihat Menu
+                    Pilih Produk
                   </a>
                 </div>
               </div>
