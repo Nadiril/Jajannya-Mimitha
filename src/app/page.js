@@ -85,46 +85,52 @@ const orderSteps = [
 
 export default function Home() {
   return (
-    <div className="flex-1">
-      <SiteHeader />
+    <div className="flex min-h-screen flex-col">
+  <SiteHeader />
 
-      <main id="main">
-        <section id="beranda" className="mimitha-section relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
-          <div className="mx-auto grid max-w-7xl items-center gap-6 px-5 py-10 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-12">
-            <div className="max-w-2xl">
-              <h1 className="text-3xl font-black leading-[1.1] tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl">
-                Satu Gigitan {' '}
-                <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
-              </h1>
-              <p className="mt-5 max-w-prose text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
-                Jajanan Mimitha menghadirkan pastry, brownies, dan Banana Bread handmade dengan cita rasa hangat,
-                elegan, dan autentik khas UMKM lokal Banyuwangi.
-              </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#produk"
-                  className="inline-flex items-center justify-center rounded-full border border-mimitha-primary/25 bg-mimitha-primary px-7 py-3.5 text-base font-bold shadow-lg shadow-mimitha-primary/20 sm:py-4"
-                  style={{ color: '#ffffff' }}
-                >
-                  Lihat Menu
-                </a>
+  <main id="main" className="flex-1">
+    <section
+      id="beranda"
+      className="mimitha-section relative overflow-hidden scroll-mt-24"
+    >
+      <div className="absolute inset-0 -z-10 " />
 
-              </div>
-            </div>
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24 xl:py-28">
+        <div className="max-w-2xl text-center lg:text-left">
+          <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-mimitha-text sm:text-5xl lg:text-6xl xl:text-7xl">
+            Satu Gigitan{' '}
+            <span className="mimitha-gradient-text">Banyak</span> Momen
+            Spesial.
+          </h1>
 
-            <div className="relative flex items-center">
-              <Image
-                src="/ProdukPage.webp"
-                alt="Produk Jajanan Mimitha"
-                width={400}
-                height={500}
-                className="h-auto w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md rounded-3xl object-cover shadow-2xl lg:mx-auto"
-                priority
-              />
-            </div>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8 lg:mx-0 lg:text-xl lg:leading-9">
+            Jajanan Mimitha menghadirkan pastry, brownies, dan Banana Bread
+            handmade dengan cita rasa hangat, elegan, dan autentik khas UMKM
+            lokal Banyuwangi.
+          </p>
+
+          <div className="mt-8 flex justify-center lg:justify-start">
+            <a
+              href="#produk"
+              className="inline-flex w-full items-center justify-center rounded-full border border-mimitha-primary/25 bg-mimitha-primary px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-mimitha-primary/20 transition hover:-translate-y-0.5 hover:shadow-xl sm:w-auto sm:px-8 sm:py-4"
+            >
+              Lihat Menu
+            </a>
           </div>
-        </section>
+        </div>
+
+        <div className="relative mx-auto flex w-full max-w-xl items-center justify-center lg:justify-end">
+          <Image
+            src="/ProdukPage.webp"
+            alt="Produk Jajanan Mimitha"
+            width={720}
+            height={520}
+            className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-2xl sm:aspect-[16/10] lg:aspect-[4/3]"
+            priority
+          />
+        </div>
+      </div>
+    </section>
 
         <section id="tentang" className="mimitha-section mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
@@ -334,7 +340,7 @@ export default function Home() {
                   <div className="flex h-full flex-col justify-between p-6">
                     <div>
                       <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-200">Google Maps</p>
-                      <h3 className="mt-3 text-2xl font-black text-white">Peta Lokasi</h3>
+                      <h3 className="mt-2 text-2xl font-black text-white">Peta Lokasi</h3>
                     </div>
                     <div className="relative h-[400px] overflow-hidden rounded-[1.5rem] bg-mimitha-cream">
                       <InteractiveMap />
