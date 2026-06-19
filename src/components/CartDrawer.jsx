@@ -125,7 +125,7 @@ export default function CartDrawer() {
 
       {/* Drawer panel */}
       <aside
-        className="fixed right-0 top-0 z-[100] flex h-screen w-full max-w-sm flex-col bg-mimitha-cream shadow-2xl lg:w-[420px]"
+        className="fixed inset-y-0 right-0 z-[100] flex h-[100dvh] max-h-[100dvh] w-full max-w-sm flex-col overflow-hidden bg-mimitha-cream shadow-2xl lg:w-[420px]"
         role="dialog"
         aria-modal="true"
         aria-label="Keranjang Belanja"
@@ -220,7 +220,7 @@ export default function CartDrawer() {
             </div>
           )
         ) : (
-          <div className="flex-1 overflow-y-auto px-6 py-6">
+          <div className="flex-1 overflow-y-auto px-6 pt-6 pb-6">
             <div className="space-y-4">
               {cartItems.map((item) => (
                 <div
@@ -375,7 +375,7 @@ export default function CartDrawer() {
 
         {/* Fixed footer - only action buttons */}
         {shouldShowFooter && (
-          <div className="flex-none border-t border-mimitha-primary/10 px-6 py-5">
+          <div className="flex-none border-t border-mimitha-primary/10 px-6 py-5 pb-[calc(env(safe-area-inset-bottom)+16px)]">
             {showCartSummary && (
               <>
                 <div className="mb-4 flex items-center justify-between">
