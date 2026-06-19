@@ -25,19 +25,19 @@ export default function TentangPage() {
     <>
       <SiteHeader />
       <main id='main' className='flex-1'>
-        <section className='mx-auto max-w-7xl px-5 py-20 lg:px-8'>
-          <div className='grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center'>
+        <section className='mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20'>
+          <div className='grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center'>
             <div>
               <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>Tentang Kami</p>
-              <h1 className='mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl'>
+              <h1 className='mt-4 text-3xl font-black tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl'>
                 Dari dapur untuk pelanggan yang loyal akan kualitas.
               </h1>
-              <p className='mt-6 text-lg leading-8 text-mimitha-muted'>
+              <p className='mt-5 max-w-prose text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8'>
                 Jajanan Mimitha hadir sebagai UMKM pastry Banyuwangi yang mengutamakan proses handmade,
                 bahan pilihan, dan cita rasa premium. Setiap produk dibuat dengan ketelitian agar cocok untuk
                 camilan harian, hadiah, hingga suguhan spesial.
               </p>
-              <p className='mt-4 text-lg leading-8 text-mimitha-muted'>
+              <p className='mt-4 text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8'>
                 Visi kami sederhana: memperkenalkan pastry lokal yang tidak hanya enak, tetapi juga rapi,
                 higienis, dan mudah dipesan melalui online maupun offline.
               </p>

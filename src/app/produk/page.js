@@ -31,18 +31,18 @@ export default function ProdukPage() {
     <>
       <SiteHeader />
       <main id='main' className='flex-1'>
-        <section className='mx-auto max-w-7xl px-5 py-20 lg:px-8'>
+        <section className='mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20'>
           <div className='mx-auto max-w-3xl text-center'>
-            <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>Best Seller Products</p>
-            <h1 className='mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl'>
+            <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>Produk Terlaris</p>
+            <h1 className='mt-4 text-3xl font-black tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl'>
               Pilihan pastry favorit anda.
             </h1>
-            <p className='mt-5 text-lg leading-8 text-mimitha-muted'>
+            <p className='mt-5 max-w-2xl mx-auto text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8'>
               Katalog produk dapat difilter berdasarkan kategori, lalu langsung terhubung ke WhatsApp admin untuk
               konfirmasi pesanan.
             </p>
           </div>
-          <div className='mt-12'>
+          <div className='mt-10'>
             <ProductCatalog whatsappNumber={whatsappNumber} />
           </div>
         </section>

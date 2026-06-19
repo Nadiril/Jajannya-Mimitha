@@ -38,17 +38,17 @@ export default function TestimoniPage() {
     <>
       <SiteHeader />
       <main id="main" className="flex-1">
-        <section className="bg-mimitha-primary py-20">
+        <section className="bg-mimitha-primary py-12 lg:py-20">
           <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-amber-200">
-              TESTIMONIALS
+              TESTIMONI
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
               Apa Kata Mereka Tentang Jajannya Mimitha?
             </h2>
           </div>
 
-          <div className="mx-auto mt-16 max-w-[900px] px-5 lg:px-8">
+          <div className="mx-auto mt-10 max-w-[900px] px-5 lg:px-8">
             <div className="flex flex-col gap-4">
               {testimonials.map((testimonial) => (
                 <article key={testimonial.name} className="flex flex-col gap-3 rounded-[2rem] bg-white p-7 sm:flex-row sm:items-start sm:gap-6">

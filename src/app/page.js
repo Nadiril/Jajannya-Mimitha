@@ -91,13 +91,13 @@ export default function Home() {
       <main id="main">
         <section id="beranda" className="mimitha-section relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.18),transparent_36%)]" />
-          <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-12">
+          <div className="mx-auto grid max-w-7xl items-center gap-6 px-5 py-10 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-12">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-black leading-[1.1] tracking-tight text-mimitha-text sm:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-black leading-[1.1] tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl">
                 Satu Gigitan {' '}
                 <span className="mimitha-gradient-text">Banyak</span> Momen Spesial.
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-prose text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
                 Jajanan Mimitha menghadirkan pastry, brownies, dan Banana Bread handmade dengan cita rasa hangat,
                 elegan, dan autentik khas UMKM lokal Banyuwangi.
               </p>
@@ -113,24 +113,24 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative flex flex-col items-center gap-6">
+            <div className="relative flex items-center">
               <Image
                 src="/ProdukPage.webp"
                 alt="Produk Jajanan Mimitha"
                 width={400}
                 height={500}
-                className="h-auto w-full max-w-md rounded-3xl object-cover shadow-2xl lg:mx-auto"
+                className="h-auto w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md rounded-3xl object-cover shadow-2xl lg:mx-auto"
                 priority
               />
             </div>
           </div>
         </section>
 
-        <section id="tentang" className="mimitha-section mx-auto max-w-7xl px-5 py-20 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <section id="tentang" className="mimitha-section mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Tentang Kami</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl">
                 Dari dapur untuk pelanggan yang loyal akan kualitas.
               </h2>
               <p className="mt-6 text-lg leading-8 text-mimitha-muted">
@@ -170,19 +170,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="produk" className="mimitha-section mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <section id="produk" className="mimitha-section mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Produk Terlaris</p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl">
               Pilih pastry favorit Anda.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-mimitha-muted">
+            <p className="mt-5 max-w-2xl mx-auto text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
               Katalog produk dapat difilter berdasarkan kategori, lalu langsung terhubung ke WhatsApp admin untuk
               konfirmasi pesanan.
             </p>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-10">
             <ProductCatalog whatsappNumber={whatsappNumber} />
           </div>
         </section>
@@ -191,13 +191,13 @@ export default function Home() {
 
 
         <section id="testimoni" className="mimitha-section bg-mimitha-primary">
-          <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
             <div className="mx-auto max-w-3xl text-center text-white">
               <p className="text-sm font-black uppercase tracking-[0.24em] text-amber-200">Testimoni</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Apa Kata Mereka Tentang Jajannya Mimitha?</h2>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">Apa Kata Mereka Tentang Jajannya Mimitha?</h2>
             </div>
 
-            <div className="mx-auto mt-16 max-w-[900px] px-5 lg:px-8">
+            <div className="mx-auto mt-10 max-w-[900px] px-5 lg:px-8">
               <div className="flex flex-col gap-4">
                 {testimonials.map((testimonial) => (
                   <article key={testimonial.name} className="flex flex-col gap-3 rounded-[2rem] bg-white p-7 sm:flex-row sm:items-start sm:gap-6">

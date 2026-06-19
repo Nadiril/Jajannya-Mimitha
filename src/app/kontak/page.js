@@ -14,12 +14,12 @@ export default function KontakPage() {
     <>
       <SiteHeader />
       <main id='main' className='flex-1'>
-        <section className='mx-auto max-w-7xl px-5 py-20 lg:px-8'>
+        <section className='mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20'>
           <div className='overflow-hidden rounded-[2.5rem] bg-mimitha-primary text-white shadow-2xl shadow-mimitha-primary/20'>
             <div className='grid lg:grid-cols-[1fr_1fr]'>
-              <div className='p-8 sm:p-10 lg:p-14'>
+              <div className='p-6 sm:p-10 lg:p-14'>
                  <p className='text-sm font-black uppercase tracking-[0.24em] text-amber-200'>Lokasi & Kontak</p>
-                <h1 className='mt-4 text-4xl font-black tracking-tight sm:text-5xl'>Kunjungi atau hubungi Jajanannya Mimitha.</h1>
+                <h1 className='text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl'>Kunjungi atau hubungi Jajanannya Mimitha.</h1>
           
                 <div className='mt-8 grid gap-4 sm:grid-cols-2'>
                   <div className='rounded-[1.5rem] bg-white/10 p-5'>
@@ -62,8 +62,8 @@ export default function KontakPage() {
                   </a>
                 </div>
               </div>
-              <div className='relative min-h-[520px] '>
-                <div className='flex h-full flex-col justify-between p-6'>
+               <div className='relative min-h-[520px] '>
+                 <div className='flex h-full flex-col justify-between p-4 sm:p-6'>
                   <div>
                     <p className='text-sm font-bold uppercase tracking-[0.2em] text-amber-200'>Google Maps</p>
                     <h2 className='mt-3 text-2xl font-black text-white'>Peta Lokasi</h2>
