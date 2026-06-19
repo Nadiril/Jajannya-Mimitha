@@ -27,7 +27,7 @@ export default function ProductSection({ whatsappNumber }) {
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent">Produk Terlaris</p>
         <h2 className="mt-4 text-3xl font-black tracking-tight text-mimitha-text sm:text-4xl lg:text-5xl">
-          Pilih pastry favorit Anda.
+          Pilih pastry favorit anda.
         </h2>
         <p className="mt-5 max-w-2xl mx-auto text-base leading-7 text-mimitha-muted sm:text-lg sm:leading-8">
           Katalog produk dapat difilter berdasarkan kategori, lalu langsung terhubung ke WhatsApp admin untuk

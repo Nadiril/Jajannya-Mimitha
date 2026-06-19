@@ -33,7 +33,7 @@ export default function TestimonialSection() {
       <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl text-center text-white">
           <p className="text-sm font-black uppercase tracking-[0.24em] text-amber-200">Testimoni</p>
-          <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">Apa Kata Mereka Tentang Jajannya Mimitha?</h2>
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">Apa kata mereka tentang jajannya mimitha?</h2>
         </div>
 
         <div className="mx-auto mt-10 max-w-[900px] px-5 lg:px-8">
