@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 
-const categories = ['Semua', 'Bollendutt', 'Banana', 'Lilit', 'Brownies', 'Banana Bread'];
+const categories = ['Semua', 'Bollendutt', 'Pisang', 'Lilit', 'Brownies', 'Roti Pisang'];
 
 const products = [
   {

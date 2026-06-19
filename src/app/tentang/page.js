@@ -7,15 +7,15 @@ export const metadata = {
 };
 
 const qualities = [
-  { title: 'Fresh Daily', text: 'Produk dipanggang setiap hari untuk menjaga kualitas, aroma, dan tekstur terbaik.' },
-  { title: 'Premium Ingredients', text: 'Menggunakan bahan baku pilihan dengan rasa yang konsisten dan premium.' },
-  { title: 'Handmade Process', text: 'Dibuat secara manual dengan perhatian terhadap detail pada setiap lapisan pastry.' },
-  { title: 'Hygienic Production', text: 'Proses produksi mengutamakan kebersihan, kerapian, dan keamanan pangan.' },
-  { title: 'Fast Delivery', text: 'Pemesanan mudah melalui WhatsApp untuk diproses lebih cepat oleh admin.' },
+  { title: 'Segar Setiap Hari', text: 'Produk dipanggang setiap hari untuk menjaga kualitas, aroma, dan tekstur terbaik.' },
+  { title: 'Bahan Premium', text: 'Menggunakan bahan baku pilihan dengan rasa yang konsisten dan premium.' },
+  { title: 'Proses Handmade', text: 'Dibuat secara manual dengan perhatian terhadap detail pada setiap lapisan pastry.' },
+  { title: 'Produksi Higienis', text: 'Proses produksi mengutamakan kebersihan, kerapian, dan keamanan pangan.' },
+  { title: 'Pengiriman Cepat', text: 'Pemesanan mudah melalui WhatsApp untuk diproses lebih cepat oleh admin.' },
 ];
 
 const stats = [
-  { value: '5+', label: 'Produk unggulan' },
+  { value: '12+', label: 'Produk unggulan' },
   { value: '1.000+', label: 'Pelanggan' },
   { value: 'Banyuwangi', label: 'Brand lokal' },
 ];
@@ -28,7 +28,7 @@ export default function TentangPage() {
         <section className='mx-auto max-w-7xl px-5 py-20 lg:px-8'>
           <div className='grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center'>
             <div>
-              <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>About Us</p>
+              <p className='text-sm font-black uppercase tracking-[0.24em] text-mimitha-accent'>Tentang Kami</p>
               <h1 className='mt-4 text-4xl font-black tracking-tight text-mimitha-text sm:text-5xl'>
                 Dari dapur untuk pelanggan yang loyal akan kualitas.
               </h1>

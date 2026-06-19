@@ -30,7 +30,7 @@ export const metadata = {
     type: 'website',
     locale: 'id_ID',
     siteName: 'Jajanan Mimitha Banyuwangi',
-    title: 'Jajanan Mimitha Banyuwangi | Pastry Premium Fresh Daily',
+    title: 'Jajanan Mimitha Banyuwangi | Pastry Premium Segar Setiap Hari',
     description:
       'Katalog pastry premium handmade dari UMKM lokal Banyuwangi dengan pemesanan mudah melalui WhatsApp.',
   },

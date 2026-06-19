@@ -4,7 +4,7 @@ import SiteFooter from '@/components/SiteFooter';
 
 export const metadata = {
   title: 'Produk | Jajanan Mimitha Banyuwangi',
-  description: 'Katalog produk Jajanan Mimitha Banyuwangi: croissant, danish, sweet pastry, savory pastry, dan seasonal menu.',
+  description: 'Katalog produk Jajanan Mimitha Banyuwangi: croissant, danish, pastry manis, pastry gurih, dan menu musiman.',
 };
 
 const categories = [
@@ -17,11 +17,11 @@ const categories = [
     text: 'Manis lembut dengan topping buah, cokelat, atau keju creamy.',
   },
   {
-    title: 'Sweet Pastry',
+    title: 'Pastry Manis',
     text: 'Pilihan pastry manis untuk menemani kopi dan momen santai.',
   },
   {
-    title: 'Savory Pastry',
+    title: 'Pastry Gurih',
     text: 'Isian gurih yang cocok untuk sarapan, bekal, atau acara keluarga.',
   },
 ];
