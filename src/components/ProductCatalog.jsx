@@ -77,7 +77,7 @@ const products = [
     category: "Brownies",
     description:
       "Brownies lembut dengan rasa cokelat  yang kaya dan toping bervariasi.",
-    image: "Brownis-bites.webp",
+    image: "Fudgy Brownies.webp",
   },
   {
     name: "Brownies Bites",
