@@ -247,6 +247,7 @@ export default function Home() {
                   <a
                     href="#produk"
                     className="inline-flex items-center justify-center rounded-full bg-mimitha-primary px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-mimitha-primary/20 sm:py-4"
+                    style={{ color: '#ffffff' }}
                   >
                     Lihat Menu
                   </a>
