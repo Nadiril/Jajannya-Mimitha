@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: {
-    default: 'Jajanya nMimitha Banyuwangi',
+    default: 'Jajannya Mimitha Banyuwangi',
     template: '%s | Jajanan Mimitha Banyuwangi',
   },
   description:
